@@ -1,0 +1,25 @@
+{
+    "trailingSlash": "auto",
+    "routes": [
+        {
+            "route": "/index.html",
+            "allowedRoles": ["authenticated"]
+        },
+        {
+            "route": "/login",
+            "rewrite": "/.auth/login/aad"
+        },
+        {
+            "route": "/.auth/login/x",
+            "statusCode": 404
+        }
+    ],
+    "responseOverrides": {
+    },
+    "globalHeaders": {
+        "content-security-policy": "default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'"
+    },
+    "mimeTypes": {
+        ".json": "text/json"
+    }
+}
